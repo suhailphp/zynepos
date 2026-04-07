@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
@@ -12,13 +12,17 @@ export class UsersService {
   ) {}
 
   async create(user: Partial<User>): Promise<User> {
+    if (!user.password) {
+      throw new BadRequestException('Password is required');
+    }
     const salt = await bcrypt.genSalt();
     user.password = await bcrypt.hash(user.password, salt);
     const newUser = this.usersRepository.create(user);
     return this.usersRepository.save(newUser);
   }
 
-  async findOne(username: string): Promise<User | undefined> {
+  async findOne(username: string): Promise<User | null> {
     return this.usersRepository.findOne({ where: { username } });
   }
 }
+
