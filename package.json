@@ -1,0 +1,20 @@
+{
+  "name": "zynepos",
+  "version": "1.0.0",
+  "description": "A high-performance, AI-driven retail engine built with Node.js and PostgreSQL. Designed for high-concurrency supermarket environments, it features real-time AI item recognition, seamless weighing scale integration, and a modular architecture. Developed by a senior engineering team for the GCC retail market.",
+  "homepage": "https://github.com/suhailphp/zynepos#readme",
+  "bugs": {
+    "url": "https://github.com/suhailphp/zynepos/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suhailphp/zynepos.git"
+  },
+  "license": "ISC",
+  "author": "suhailphp@gmail.com",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
