@@ -27,9 +27,16 @@
 1.  **Branching:** All new work must be done on a feature branch created from the `dev` branch.
 2.  **Branch Naming Convention:**
     -   Main development branch: `dev`
-    -   Agent's branches: `dev-cli-[feature-name]` (e.g., `dev-cli-user`)
-    -   User's (Suhail's) branches: `dev-s-[feature-name]` (e.g., `dev-s-user`)
+    -   Agent\'s branches: `dev-cli-[feature-name]` (e.g., `dev-cli-user`)
+    -   User\'s (Suhail\'s) branches: `dev-s-[feature-name]` (e.g., `dev-s-user`)
     -   Use `-client` or `-fe` suffix for frontend branches (e.g., `dev-cli-user-client`).
-3.  **Push, Don't Merge:** After completing a feature, the agent will `git push` the feature branch to the remote GitHub repository.
+3.  **Push, Don\'t Merge:** After completing a feature, the agent will `git push` the feature branch to the remote GitHub repository.
 4.  **User-Led Merge:** The user (suhailphp) is responsible for reviewing and merging all pull requests on GitHub.
 5.  **Pull Before New Work:** Before creating a new feature branch, the agent must first `git checkout dev` and `git pull` to get the latest changes.
+
+### Code Style & Formatting
+
+- **Strict Prettier Rules:** The project enforces a strict Prettier configuration.
+  - All multi-line objects, arrays, and parameter lists must have a trailing comma.
+  - Use single quotes (`'`) for all strings unless the string itself contains a single quote, in which case use double quotes (`"`).
+
