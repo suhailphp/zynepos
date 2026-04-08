@@ -16,6 +16,7 @@ The `User` entity defines the schema for the `users` table in the PostgreSQL dat
 - `mobile`: Optional phone number.
 - `pin`: Optional 4-digit PIN for quick POS access.
 - `isActive`: Boolean to enable/disable the user.
+- `isDeleted`: Boolean flag for soft-deletes.
 - `hourlyRate`: Optional decimal for payroll calculation.
 - `outletId`: Optional integer to link the user to a specific store location.
 - `permissions`: A flexible array of text strings to control user actions (e.g., `"CAN_ISSUE_REFUND"`).

@@ -11,7 +11,6 @@ async function bootstrap() {
     const port = configService.get('PORT') || 3000;
     const host = configService.get('HOST_NAME') || 'localhost';
     app.useGlobalPipes(new common_1.ValidationPipe());
-    app.useGlobalInterceptors(new common_1.ClassSerializerInterceptor(app.get(core_1.Reflector)));
     app.enableCors();
     const config = new swagger_1.DocumentBuilder()
         .setTitle('Zyne POS API')
