@@ -19,7 +19,9 @@
 - **Proactive Decisions:** The agent is authorized to make expert decisions (e.g., adding recommended fields to a database model) but must inform the user about the decision and the reasoning behind it.
 
 ### Documentation
-- **Logic:** For each new module, a corresponding markdown file documenting its logic and architecture must be created in the `.gemini/logic/` directory. (e.g., `.gemini/logic/user_auth_module.md`).
+- **Logic:** For each new module, a corresponding markdown file documenting its logic must be created. This documentation is separated by context:
+  - Backend logic files go in `.gemini/logic/backend/` (e.g., `user_auth.md`).
+  - Frontend logic files go in `.gemini/logic/frontend/` (e.g., `routing.md`, `login_page.md`).
 - **Agent Brief:** This `gemini.md` file must be kept up-to-date with any major changes to the project plan or workflow.
 
 ### Git Workflow
@@ -39,4 +41,10 @@
 - **Strict Prettier Rules:** The project enforces a strict Prettier configuration.
   - All multi-line objects, arrays, and parameter lists must have a trailing comma.
   - Use single quotes (`'`) for all strings unless the string itself contains a single quote, in which case use double quotes (`"`).
+
+### Frontend Architecture
+
+- **Framework:** Modern React Single-Page Application (SPA) initialized with `create-react-app`.
+- **Component Library:** Ant Design (antd).
+- **Folder Structure:** Pages are organized by feature in `src/pages/`. The main component for a page is named `index.tsx` within its feature folder (e.g., `src/pages/Login/index.tsx`).
 
