@@ -71,6 +71,7 @@ export class UsersService {
     }
 
     user.isActive = false;
+    user.isDeleted = true;
     user.deletedAt = new Date();
     user.deletedById = editorId;
     user.updatedById = editorId;

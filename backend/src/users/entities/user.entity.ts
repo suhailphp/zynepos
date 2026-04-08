@@ -37,6 +37,9 @@ export class User {
   @Column({ default: true })
   isActive!: boolean;
 
+  @Column({ default: false })
+  isDeleted!: boolean;
+
   @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
   hourlyRate!: number;
 
