@@ -1,45 +1,52 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  DeleteDateColumn,
+} from 'typeorm';
 
 @Entity({ name: 'users' })
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column({ unique: true })
-  username: string;
+  username!: string;
 
   @Column()
   password?: string;
 
   @Column()
-  fullName: string;
+  fullName!: string;
 
   @Column({ unique: true, nullable: true })
-  email: string;
+  email!: string;
 
   @Column({ nullable: true })
-  mobile: string;
+  mobile!: string;
 
   @Column({ length: 4, nullable: true })
-  pin: string;
+  pin!: string;
 
   @Column({ default: true })
-  isActive: boolean;
+  isActive!: boolean;
 
   @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
-  hourlyRate: number;
+  hourlyRate!: number;
 
   @Column({ nullable: true })
-  outletId: number;
+  outletId!: number;
 
   @Column({ type: 'text', array: true, default: [] })
-  permissions: string[];
+  permissions!: string[];
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 
   @DeleteDateColumn()
   deletedAt?: Date;
