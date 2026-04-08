@@ -62,7 +62,7 @@ export class UsersController {
     @Body() createUserDto: CreateUserDto,
     @Request() req,
   ): Promise<UserResponseDto> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
     const user = await this.usersService.create(createUserDto, req.user.userId);
     return mapUserToResponse(user);
   }
@@ -128,6 +128,7 @@ export class UsersController {
     @Param('id', ParseIntPipe) id: number,
     @Request() req,
   ): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
     await this.usersService.remove(id, req.user.userId);
   }
 }
