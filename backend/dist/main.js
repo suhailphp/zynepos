@@ -9,6 +9,7 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     const configService = app.get(config_1.ConfigService);
     const port = configService.get('PORT') || 3000;
+    const host = configService.get('HOST_NAME') || 'localhost';
     app.useGlobalPipes(new common_1.ValidationPipe());
     const config = new swagger_1.DocumentBuilder()
         .setTitle('Zyne POS API')
@@ -18,11 +19,11 @@ async function bootstrap() {
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);
-    await app.listen(port, () => {
+    await app.listen(port, host, () => {
         common_1.Logger.log('************************************************************', 'Bootstrap');
         common_1.Logger.log('*           Database connected successfully            *', 'Bootstrap');
-        common_1.Logger.log(`*  Application is running on: http://localhost:${port}     *`, 'Bootstrap');
-        common_1.Logger.log(`*  API docs available at: http://localhost:${port}/api   *`, 'Bootstrap');
+        common_1.Logger.log(`*  Application is running on: http://${host}:${port}     *`, 'Bootstrap');
+        common_1.Logger.log(`*  API docs available at: http://${host}:${port}/api   *`, 'Bootstrap');
         common_1.Logger.log('************************************************************', 'Bootstrap');
     });
 }

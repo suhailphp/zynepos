@@ -7,7 +7,9 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get<ConfigService>(ConfigService);
+
   const port = configService.get<number>('PORT') || 3000;
+  const host = configService.get<string>('HOST_NAME') || 'localhost';
 
   app.useGlobalPipes(new ValidationPipe());
 
@@ -22,7 +24,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(port, () => {
+  await app.listen(port, host, () => {
     Logger.log(
       '************************************************************',
       'Bootstrap',
@@ -32,11 +34,11 @@ async function bootstrap() {
       'Bootstrap',
     );
     Logger.log(
-      `*  Application is running on: http://localhost:${port}     *`,
+      `*  Application is running on: http://${host}:${port}     *`,
       'Bootstrap',
     );
     Logger.log(
-      `*  API docs available at: http://localhost:${port}/api   *`,
+      `*  API docs available at: http://${host}:${port}/api   *`,
       'Bootstrap',
     );
     Logger.log(
