@@ -7,7 +7,7 @@
 /reference
 
 # Build output
-/dist
+dist/
 /build
 
 # Environment variables
