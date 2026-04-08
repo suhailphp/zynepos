@@ -58,9 +58,24 @@ const MainLayout: React.FC = () => {
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider breakpoint="lg" collapsedWidth="0">
-        <div style={{ height: '32px', margin: '16px', background: 'rgba(255, 255, 255, 0.2)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
-          <HddOutlined style={{ fontSize: '20px'}} />
-          <span style={{ marginLeft: '8px', fontSize: '16px', fontWeight: 'bold'}}>Zyne POS</span>
+        <div
+          style={{
+            height: '32px',
+            margin: '16px',
+            background: 'rgba(255, 255, 255, 0.2)',
+            borderRadius: '6px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+          }}
+        >
+          <HddOutlined style={{ fontSize: '20px' }} />
+          <span
+            style={{ marginLeft: '8px', fontSize: '16px', fontWeight: 'bold' }}
+          >
+            Zyne POS
+          </span>
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['dashboard']}>
           <Menu.Item key="dashboard" icon={<DashboardOutlined />}>
@@ -72,10 +87,18 @@ const MainLayout: React.FC = () => {
         </Menu>
       </Sider>
       <Layout>
-        <Header style={{ padding: '0 24px', background: colorBgContainer, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Header
+          style={{
+            padding: '0 24px',
+            background: colorBgContainer,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
           {/* Left side of header can have breadcrumbs or other nav later */}
           <div></div>
-          
+
           {/* Right side of header */}
           <Space size="middle">
             <Input

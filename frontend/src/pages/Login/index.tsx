@@ -29,9 +29,20 @@ export default function LoginPage() {
   };
 
   return (
-    <Layout style={{ minHeight: '100vh', display: 'grid', placeItems: 'center' }}>
-      <Content style={{ padding: '50px', background: '#fff', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
-        <Title level={2} style={{ textAlign: 'center', marginBottom: '24px' }}>Zyne POS Login</Title>
+    <Layout
+      style={{ minHeight: '100vh', display: 'grid', placeItems: 'center' }}
+    >
+      <Content
+        style={{
+          padding: '50px',
+          background: '#fff',
+          borderRadius: '8px',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+        }}
+      >
+        <Title level={2} style={{ textAlign: 'center', marginBottom: '24px' }}>
+          Zyne POS Login
+        </Title>
         <Form
           form={form}
           name="basic"

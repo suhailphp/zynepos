@@ -5,7 +5,10 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   DeleteDateColumn,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
+import { Exclude } from 'class-transformer';
 
 @Entity({ name: 'users' })
 export class User {
@@ -15,6 +18,7 @@ export class User {
   @Column({ unique: true })
   username!: string;
 
+  @Exclude()
   @Column()
   password?: string;
 
@@ -48,6 +52,34 @@ export class User {
   @UpdateDateColumn()
   updatedAt!: Date;
 
+  @Exclude()
   @DeleteDateColumn()
   deletedAt?: Date;
+
+  @Exclude()
+  @Column({ nullable: true })
+  createdById?: number;
+
+  @Exclude()
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'createdById' })
+  createdBy?: User;
+
+  @Exclude()
+  @Column({ nullable: true })
+  updatedById?: number;
+
+  @Exclude()
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'updatedById' })
+  updatedBy?: User;
+
+  @Exclude()
+  @Column({ nullable: true })
+  deletedById?: number;
+
+  @Exclude()
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'deletedById' })
+  deletedBy?: User;
 }
