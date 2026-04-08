@@ -12,6 +12,7 @@ async function bootstrap() {
   const host = configService.get<string>('HOST_NAME') || 'localhost';
 
   app.useGlobalPipes(new ValidationPipe());
+  app.enableCors();
 
   const config = new DocumentBuilder()
     .setTitle('Zyne POS API')

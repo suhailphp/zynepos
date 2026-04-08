@@ -11,6 +11,7 @@ async function bootstrap() {
     const port = configService.get('PORT') || 3000;
     const host = configService.get('HOST_NAME') || 'localhost';
     app.useGlobalPipes(new common_1.ValidationPipe());
+    app.enableCors();
     const config = new swagger_1.DocumentBuilder()
         .setTitle('Zyne POS API')
         .setDescription('**Zyne POS** is a high-performance Point of Sale (POS) application designed for retail and service environments. It features a modern, responsive user interface and a robust backend to handle core functionalities like sales, user management, and inventory.')
