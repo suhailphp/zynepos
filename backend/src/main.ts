@@ -23,11 +23,26 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   await app.listen(port, () => {
-    Logger.log('************************************************************', 'Bootstrap');
-    Logger.log('*           Database connected successfully            *', 'Bootstrap');
-    Logger.log(`*  Application is running on: http://localhost:${port}     *`, 'Bootstrap');
-    Logger.log(`*  API docs available at: http://localhost:${port}/api   *`, 'Bootstrap');
-    Logger.log('************************************************************', 'Bootstrap');
+    Logger.log(
+      '************************************************************',
+      'Bootstrap',
+    );
+    Logger.log(
+      '*           Database connected successfully            *',
+      'Bootstrap',
+    );
+    Logger.log(
+      `*  Application is running on: http://localhost:${port}     *`,
+      'Bootstrap',
+    );
+    Logger.log(
+      `*  API docs available at: http://localhost:${port}/api   *`,
+      'Bootstrap',
+    );
+    Logger.log(
+      '************************************************************',
+      'Bootstrap',
+    );
   });
 }
 
