@@ -28,7 +28,7 @@ The `User` entity defines the schema for the `users` table in the PostgreSQL dat
 
 ### Controller (`users.controller.ts`)
 
-- **`POST /users`**: The public registration endpoint. It uses the `CreateUserDto` to validate the incoming request body before passing it to the `UsersService`.
+- **`POST /users`**: A protected endpoint for creating new users. It uses the `CreateUserDto` to validate the incoming request body. The `creatorId` is automatically populated from the JWT of the user making the request.
 
 ---
 

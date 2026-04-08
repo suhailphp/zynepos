@@ -7,7 +7,10 @@ const UsersPage: React.FC = () => {
   return (
     <>
       <Title>User Management</Title>
-      <p>This is where the user list, user creation, and user editing forms will go.</p>
+      <p>
+        This is where the user list, user creation, and user editing forms will
+        go.
+      </p>
     </>
   );
 };

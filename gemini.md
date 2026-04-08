@@ -16,9 +16,11 @@
 ## 3. Core Instructions & Workflow
 
 ### General
+
 - **Proactive Decisions:** The agent is authorized to make expert decisions (e.g., adding recommended fields to a database model) but must inform the user about the decision and the reasoning behind it.
 
 ### Documentation
+
 - **Logic:** For each new module, a corresponding markdown file documenting its logic must be created. This documentation is separated by context:
   - Backend logic files go in `.gemini/logic/backend/` (e.g., `user_auth.md`).
   - Frontend logic files go in `.gemini/logic/frontend/` (e.g., `routing.md`, `login_page.md`).
@@ -28,10 +30,10 @@
 
 1.  **Branching:** All new work must be done on a feature branch created from the `dev` branch.
 2.  **Branch Naming Convention:**
-    -   Main development branch: `dev`
-    -   Agent\'s branches: `dev-cli-[feature-name]` (e.g., `dev-cli-user`)
-    -   User\'s (Suhail\'s) branches: `dev-s-[feature-name]` (e.g., `dev-s-user`)
-    -   Use `-client` or `-fe` suffix for frontend branches (e.g., `dev-cli-user-client`).
+    - Main development branch: `dev`
+    - Agent\'s branches: `dev-cli-[feature-name]` (e.g., `dev-cli-user`)
+    - User\'s (Suhail\'s) branches: `dev-s-[feature-name]` (e.g., `dev-s-user`)
+    - Use `-client` or `-fe` suffix for frontend branches (e.g., `dev-cli-user-client`).
 3.  **Push, Don\'t Merge:** After completing a feature, the agent will `git push` the feature branch to the remote GitHub repository.
 4.  **User-Led Merge:** The user (suhailphp) is responsible for reviewing and merging all pull requests on GitHub.
 5.  **Pull Before New Work:** Before creating a new feature branch, the agent must first `git checkout dev` and `git pull` to get the latest changes.
@@ -47,4 +49,3 @@
 - **Framework:** Modern React Single-Page Application (SPA) initialized with `create-react-app`.
 - **Component Library:** Ant Design (antd).
 - **Folder Structure:** Pages are organized by feature in `src/pages/`. The main component for a page is named `index.tsx` within its feature folder (e.g., `src/pages/Login/index.tsx`).
-
